@@ -9,7 +9,7 @@ from io import BytesIO
 # --- Root Window Setup ---
 root = tk.Tk()
 root.title("Weather Forecast App")
-root.configure(bg="#e0f7fa")  # light blue
+root.configure(bg="#e0f7fa")  
 
 # --- Center window on screen ---
 window_width = 900
@@ -27,11 +27,11 @@ root.geometry(f"{window_width}x{window_height}+{x_pos}+{y_pos}")
 title_label = tk.Label(root, text="Weather Forecast", 
                        font=("Helvetica", 24, "bold"), 
                        fg="#0d47a1", bg="#e0f7fa")
-title_label.pack(pady=(30, 10))  # Distance from top
+title_label.pack(pady=(30, 10)) 
 
 # --- Search Section ---
 search_frame = tk.Frame(root, bg="#e0f7fa")
-search_frame.pack(pady=(10, 30))  # Adjusts space between title & search
+search_frame.pack(pady=(10, 30))  
 
 search_label = tk.Label(search_frame, text="Enter city :", 
                         font=("Helvetica", 14), bg="#e0f7fa", fg="#333")
@@ -46,7 +46,7 @@ def search_weather():
     if not city:
         return
 
-    api_key = "2bf9cea074be95c8125fac7c665a8399"  # <-- Replace this with your actual API key
+    api_key = " "  # <-- Replace this with your actual API key
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 
     try:
@@ -106,9 +106,8 @@ search_button.pack(side=tk.LEFT)
 
 # --- Frame for Content ---
 main_frame = tk.Frame(root, bg="#ffffff", padx=20, pady=20, bd=2, relief=tk.GROOVE)
-main_frame.pack_forget()  # Keep it hidden at first
-main_frame_visible = False  # Frame is hidden initially
-#main_frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+main_frame.pack_forget()
+main_frame_visible = False 
 
 # --- Result Components inside main_frame ---
 # Flag
